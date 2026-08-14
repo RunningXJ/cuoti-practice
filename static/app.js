@@ -23,6 +23,104 @@
     shuffle: true,
   };
 
+  const LOCAL_STATE_KEY = "cuoti_user_state_v1";
+
+  function scoreUserState(s) {
+    if (!s || typeof s !== "object") return 0;
+    const pw = Object.keys(s.practiceWrongs || {}).length;
+    const chops = (s.choppedIds || []).length;
+    const statsAns = Number((s.stats && s.stats.answered) || 0);
+    let prog = 0;
+    Object.values(s.progressByMode || {}).forEach((p) => {
+      if (!p) return;
+      prog += Number(p.index || 0);
+      prog += (p.queueIds || []).length ? 1 : 0;
+      prog += Number((p.session && p.session.correct) || 0);
+      prog += Number((p.session && p.session.wrong) || 0);
+    });
+    return pw * 10 + chops * 25 + statsAns + prog;
+  }
+
+  function readLocalStateWrap() {
+    try {
+      const raw = localStorage.getItem(LOCAL_STATE_KEY);
+      if (!raw) return null;
+      const wrap = JSON.parse(raw);
+      if (!wrap || typeof wrap !== "object" || !wrap.state) return null;
+      return wrap;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function mirrorStateToLocal(userState) {
+    if (!userState) return;
+    try {
+      const prev = readLocalStateWrap();
+      const prevState = (prev && prev.state) || {};
+      const pick = (key, fallback) =>
+        userState[key] != null ? userState[key] : prevState[key] != null ? prevState[key] : fallback;
+      localStorage.setItem(
+        LOCAL_STATE_KEY,
+        JSON.stringify({
+          savedAt: Date.now(),
+          state: {
+            choppedIds: pick("choppedIds", []),
+            choppedMeta: pick("choppedMeta", {}),
+            practiceWrongs: pick("practiceWrongs", {}),
+            stats: pick("stats", {}),
+            history: pick("history", []),
+            progressByMode: pick("progressByMode", {}),
+          },
+        })
+      );
+    } catch (e) {
+      console.error("local backup failed", e);
+    }
+  }
+
+  function mirrorBankState() {
+    if (state.bank && state.bank.state) mirrorStateToLocal(state.bank.state);
+  }
+
+  async function pullAndMirrorServerState() {
+    try {
+      const st = await api("/api/state");
+      if (state.bank) state.bank.state = {
+        ...(state.bank.state || {}),
+        stats: st.stats || {},
+        practiceWrongs: st.practiceWrongs || {},
+        choppedIds: st.choppedIds || [],
+        choppedMeta: st.choppedMeta || {},
+        progressByMode: st.progressByMode || {},
+        history: st.history || [],
+      };
+      mirrorStateToLocal(st);
+    } catch (e) {
+      mirrorBankState();
+    }
+  }
+
+  async function maybeRestoreFromLocal() {
+    const wrap = readLocalStateWrap();
+    if (!wrap || !wrap.state) return false;
+    const server = (state.bank && state.bank.state) || {};
+    const localScore = scoreUserState(wrap.state);
+    const serverScore = scoreUserState(server);
+    // 本地更“充实”时恢复（典型：云端休眠后服务器回到镜像初始态）
+    if (localScore <= serverScore) return false;
+    try {
+      await api("/api/state/restore", {
+        method: "POST",
+        body: JSON.stringify({ state: wrap.state }),
+      });
+      return true;
+    } catch (e) {
+      console.error("restore failed", e);
+      return false;
+    }
+  }
+
   async function api(path, opts) {
     const res = await fetch(path, {
       headers: { "Content-Type": "application/json" },
@@ -127,6 +225,7 @@
       if (state.bank && state.bank.state) {
         state.bank.state.progressByMode = resp.progressByMode || {};
       }
+      mirrorBankState();
     } catch (e) {
       console.error(e);
     }
@@ -161,6 +260,7 @@
       if (state.bank && state.bank.state) {
         state.bank.state.progressByMode = resp.progressByMode || {};
       }
+      mirrorBankState();
     } catch (e) {
       console.error(e);
     }
@@ -439,6 +539,7 @@
       });
       state.bank.state.stats = resp.stats;
       state.bank.state.practiceWrongs = resp.practiceWrongs;
+      mirrorBankState();
       // 练习错达≥2次时，立即按多次错题样式处理
       if (!correct && practiceWrongCount(q) >= 2) {
         const card = $("#questionCard");
@@ -538,6 +639,9 @@
       state.bank.activeTotal = state.bank.questions.length;
       state.bank.choppedTotal = (resp.choppedIds || []).length;
       state.bank.state.choppedIds = resp.choppedIds || [];
+      if (resp.choppedMeta) state.bank.state.choppedMeta = resp.choppedMeta;
+      if (resp.stats) state.bank.state.stats = resp.stats;
+      mirrorBankState();
       state.queue = state.queue.filter((x) => x.id !== q.id);
       state.session.total = state.queue.length;
       if (!state.queue.length) {
@@ -581,6 +685,7 @@
         const id = btn.getAttribute("data-unchop");
         await api("/api/unchop", { method: "POST", body: JSON.stringify({ id }) });
         await reloadBank();
+        await pullAndMirrorServerState();
         renderChopped();
       });
     });
@@ -631,16 +736,19 @@
       if (!confirm("确认清空练习错题记录？不会影响题库、斩题和各模式进度。")) return;
       await api("/api/reset-practice-wrongs", { method: "POST", body: "{}" });
       await reloadBank();
+      await pullAndMirrorServerState();
       renderHome();
     });
 
     // save when page hidden / closed
     document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "hidden" && !$("#quizView").classList.contains("hidden")) {
-        saveProgress();
+      if (document.visibilityState === "hidden") {
+        mirrorBankState();
+        if (!$("#quizView").classList.contains("hidden")) saveProgress();
       }
     });
     window.addEventListener("pagehide", () => {
+      mirrorBankState();
       if (!$("#quizView").classList.contains("hidden")) saveProgress();
     });
   }
@@ -648,7 +756,11 @@
   async function init() {
     bind();
     await reloadBank();
+    if (await maybeRestoreFromLocal()) {
+      await reloadBank();
+    }
     await syncAllProgressWithBank();
+    await pullAndMirrorServerState();
     renderHome();
     show("homeView");
   }

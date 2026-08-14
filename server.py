@@ -202,7 +202,7 @@ class Handler(SimpleHTTPRequestHandler):
                 pass
 
     def do_POST(self):
-        path = urlparse(self.path).path
+        path = urlparse(self.path).path or "/"
         data = self._read_body()
         state = read_json(STATE)
         chopped = set(state.get("choppedIds") or [])
@@ -337,6 +337,17 @@ class Handler(SimpleHTTPRequestHandler):
                 progress = {}
             write_json(STATE, state)
             self._send_json(200, {"ok": True, "progressByMode": progress})
+            return
+
+        if path == "/api/state/restore":
+            # 手机浏览器本地备份恢复（云端休眠丢盘后用）
+            incoming = data.get("state") if isinstance(data.get("state"), dict) else data
+            if not isinstance(incoming, dict):
+                self._send_json(400, {"ok": False, "error": "invalid state"})
+                return
+            restored = merge_state(DEFAULT_STATE, incoming)
+            write_json(STATE, restored)
+            self._send_json(200, {"ok": True, "state": restored})
             return
 
         self._send_json(404, {"ok": False, "error": "not found"})

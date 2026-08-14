@@ -1,0 +1,11 @@
+# Render / 云平台用：不改动业务逻辑，只声明如何启动现有 server.py
+services:
+  - type: web
+    name: cuoti-practice
+    runtime: python
+    plan: free
+    buildCommand: "true"
+    startCommand: "python server.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.10.0"

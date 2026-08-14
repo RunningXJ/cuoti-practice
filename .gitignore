@@ -1,0 +1,4 @@
+﻿__pycache__/
+*.pyc
+*.tmp
+user_state.bak.json

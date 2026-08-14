@@ -157,38 +157,49 @@ class Handler(SimpleHTTPRequestHandler):
         return json.loads(raw.decode("utf-8"))
 
     def do_GET(self):
-        path = urlparse(self.path).path
-        if path == "/api/bank":
-            bank = read_json(QUESTIONS)
-            state = read_json(STATE)
-            chopped = set(state.get("choppedIds") or [])
-            qs = [q for q in bank.get("questions", []) if q.get("id") not in chopped]
-            self._send_json(
-                200,
-                {
-                    "examName": bank.get("examName"),
-                    "updatedAt": bank.get("updatedAt"),
-                    "sourceAttempts": bank.get("sourceAttempts"),
-                    "totalInBank": bank.get("total"),
-                    "activeTotal": len(qs),
-                    "choppedTotal": len(chopped),
-                    "questions": qs,
-                    "state": {
-                        "stats": state.get("stats", {}),
-                        "practiceWrongs": state.get("practiceWrongs", {}),
-                        "choppedIds": list(chopped),
-                        "choppedMeta": state.get("choppedMeta", {}),
-                        "progressByMode": state.get("progressByMode", {}),
+        # 去掉 query，避免 /app.js?v=xxx 在部分环境下 404
+        parsed = urlparse(self.path)
+        path = parsed.path or "/"
+        self.path = path
+
+        try:
+            if path == "/api/bank":
+                bank = read_json(QUESTIONS)
+                state = read_json(STATE)
+                chopped = set(state.get("choppedIds") or [])
+                qs = [q for q in bank.get("questions", []) if q.get("id") not in chopped]
+                self._send_json(
+                    200,
+                    {
+                        "examName": bank.get("examName"),
+                        "updatedAt": bank.get("updatedAt"),
+                        "sourceAttempts": bank.get("sourceAttempts"),
+                        "totalInBank": bank.get("total"),
+                        "activeTotal": len(qs),
+                        "choppedTotal": len(chopped),
+                        "questions": qs,
+                        "state": {
+                            "stats": state.get("stats", {}),
+                            "practiceWrongs": state.get("practiceWrongs", {}),
+                            "choppedIds": list(chopped),
+                            "choppedMeta": state.get("choppedMeta", {}),
+                            "progressByMode": state.get("progressByMode", {}),
+                        },
                     },
-                },
-            )
-            return
-        if path == "/api/state":
-            self._send_json(200, read_json(STATE))
-            return
-        if path in ("/", ""):
-            self.path = "/index.html"
-        return SimpleHTTPRequestHandler.do_GET(self)
+                )
+                return
+            if path == "/api/state":
+                self._send_json(200, read_json(STATE))
+                return
+            if path in ("/", ""):
+                self.path = "/index.html"
+            return SimpleHTTPRequestHandler.do_GET(self)
+        except Exception as e:
+            sys.stdout.write("[ERROR GET %s] %s\n" % (path, e))
+            try:
+                self._send_json(500, {"ok": False, "error": str(e)})
+            except Exception:
+                pass
 
     def do_POST(self):
         path = urlparse(self.path).path
@@ -335,7 +346,8 @@ def main():
     ensure_state()
     if not QUESTIONS.exists():
         print("缺少题库文件:", QUESTIONS)
-        input("按回车退出...")
+        if not os.environ.get("RENDER"):
+            input("按回车退出...")
         return
 
     server = ThreadingHTTPServer(("0.0.0.0", PORT), Handler)
@@ -349,11 +361,14 @@ def main():
     print("  关闭本窗口，或双击 stop.bat，即可停止服务")
     print("=" * 52)
 
-    def _open():
-        time.sleep(0.6)
-        webbrowser.open(url_local)
+    # Render 会设置 RENDER=true；云端不要弹本地浏览器
+    on_cloud = bool(os.environ.get("RENDER"))
+    if not on_cloud:
+        def _open():
+            time.sleep(0.6)
+            webbrowser.open(url_local)
 
-    threading.Thread(target=_open, daemon=True).start()
+        threading.Thread(target=_open, daemon=True).start()
     try:
         server.serve_forever()
     except KeyboardInterrupt:

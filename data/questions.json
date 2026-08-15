@@ -1,10 +1,18 @@
 {
   "examName": "2026年信息网络运维专业岗位能力测试（高级）模拟考",
-  "updatedAt": "2026-08-13",
+  "updatedAt": "2026-08-14",
+  "total": 321,
   "sourceAttempts": [
     {
+      "date": "2026-08-14",
+      "score": 88.5,
+      "wrong": 55,
+      "resultId": "c90707e3e6894d40a510c42af132f72d",
+      "submit": "2026-08-14 20:52:29"
+    },
+    {
       "date": "2026-08-13",
-      "score": 95,
+      "score": 95.0,
       "wrong": 20,
       "resultId": "8f1d13d4aec04ff6aa26bb9fb7c45ced",
       "submit": "2026-08-13 09:50:22"
@@ -18,14 +26,14 @@
     },
     {
       "date": "2026-08-12",
-      "score": 91,
+      "score": 91.0,
       "wrong": 46,
       "resultId": "c8fec6363835415187a3e6515dcb2469",
       "submit": "2026-08-12 16:26:14"
     },
     {
       "date": "2026-08-11",
-      "score": 87,
+      "score": 87.0,
       "wrong": 63,
       "resultId": "02344562905d4af5b7630fa97d8460d6",
       "submit": "2026-08-11 19:28:15"
@@ -45,7 +53,6 @@
       "submit": "2026-08-10 16:12:55"
     }
   ],
-  "total": 277,
   "questions": [
     {
       "id": "95fcf13f0e73",
@@ -77,6 +84,29 @@
       "appearIn": [
         "2026-08-11/87",
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "493cb3589dee",
+      "type": "判断题",
+      "stem": "办理信息工作票延期手续，应在信息工作票的有效期内，由工作负责人向工作许可人提出申请，得到同意后给予办理。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 3,
+      "appearIn": [
+        "2026-08-14/88.5",
+        "2026-08-13/95",
+        "2026-08-11/87"
       ]
     },
     {
@@ -127,13 +157,33 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-12/91",
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "f672aa2e636f",
+      "type": "判断题",
+      "stem": "Telnet客户端程序可以连接到其它端口，如80，并借此获得相关服务的重要信息（ ） （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-14/88.5",
+        "2026-08-12/91"
       ]
     },
     {
@@ -151,12 +201,41 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "6eaf2e0ebe23",
+      "type": "单选题",
+      "stem": "Windows系统的系统日志存放在（ ）。 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "C.\\windows\\config"
+        },
+        {
+          "key": "B",
+          "text": "C.\\windows\\logs"
+        },
+        {
+          "key": "C",
+          "text": "C.\\windows\\system32\\config"
+        },
+        {
+          "key": "D",
+          "text": "C.\\windows\\system32\\logs"
+        }
+      ],
+      "answer": "C",
+      "answerKeys": [
+        "C"
+      ],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -191,6 +270,73 @@
       "appearIn": [
         "2026-08-13/95",
         "2026-08-10a/88.2"
+      ]
+    },
+    {
+      "id": "b4ccb3061f3e",
+      "type": "多选题",
+      "stem": "《电力安全工作规程（信息部分）》中的业务系统有哪几类？ （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "一类业务系统"
+        },
+        {
+          "key": "B",
+          "text": "三类业务系统"
+        },
+        {
+          "key": "C",
+          "text": "二类业务系统"
+        },
+        {
+          "key": "D",
+          "text": "四类业务系统"
+        }
+      ],
+      "answer": "A, B, C",
+      "answerKeys": [
+        "A",
+        "B",
+        "C"
+      ],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-14/88.5",
+        "2026-08-11/87"
+      ]
+    },
+    {
+      "id": "a5aa3d7f6114",
+      "type": "多选题",
+      "stem": "下列有关 MAC 地址的说法中哪些是错误的（ ） （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "MAC 地址固化在 ROM 中，通常情况下无法改动"
+        },
+        {
+          "key": "B",
+          "text": "MAC 地址是一种便于更改的逻辑地址"
+        },
+        {
+          "key": "C",
+          "text": "以太网用 MAC 地址标识主机"
+        },
+        {
+          "key": "D",
+          "text": "通常只有终端主机才需要 MAC 地址，路由器等网络设备不需要"
+        }
+      ],
+      "answer": "B, D",
+      "answerKeys": [
+        "B",
+        "D"
+      ],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-14/88.5",
+        "2026-08-12/92.4"
       ]
     },
     {
@@ -274,9 +420,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-11/87",
@@ -330,9 +474,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-13/95",
@@ -354,13 +496,33 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-11/87",
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "8cdc311bc415",
+      "type": "判断题",
+      "stem": "信息设备变更用途或下线，宜擦除或销毁其中数据。（ ） （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-14/88.5",
+        "2026-08-12/92.4"
       ]
     },
     {
@@ -396,6 +558,28 @@
       ]
     },
     {
+      "id": "d4c0d6906819",
+      "type": "判断题",
+      "stem": "办公计算机宜安装防病毒、桌面管理等安全防护软件。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-14/88.5",
+        "2026-08-10b/83.3"
+      ]
+    },
+    {
       "id": "3471e10387c2",
       "type": "判断题",
       "stem": "办公计算机宜安装防病毒、桌面管理等安全防护软件（ ）。 （0.1 分）",
@@ -410,9 +594,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-13/95",
@@ -447,30 +629,6 @@
       ],
       "wrongCount": 2,
       "appearIn": [
-        "2026-08-11/87"
-      ]
-    },
-    {
-      "id": "493cb3589dee",
-      "type": "判断题",
-      "stem": "办理信息工作票延期手续，应在信息工作票的有效期内，由工作负责人向工作许可人提出申请，得到同意后给予办理。 （0.1 分）",
-      "options": [
-        {
-          "key": "A",
-          "text": "正确"
-        },
-        {
-          "key": "B",
-          "text": "错误"
-        }
-      ],
-      "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
-      "wrongCount": 2,
-      "appearIn": [
-        "2026-08-13/95",
         "2026-08-11/87"
       ]
     },
@@ -522,9 +680,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-10a/88.2",
@@ -566,6 +722,39 @@
       ]
     },
     {
+      "id": "7afc9b132dee",
+      "type": "多选题",
+      "stem": "属于主动防护技术一般有（ ） （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "入侵检测"
+        },
+        {
+          "key": "B",
+          "text": "安全扫描"
+        },
+        {
+          "key": "C",
+          "text": "数据加密"
+        },
+        {
+          "key": "D",
+          "text": "路由过滤"
+        }
+      ],
+      "answer": "B, C",
+      "answerKeys": [
+        "B",
+        "C"
+      ],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-14/88.5",
+        "2026-08-10a/88.2"
+      ]
+    },
+    {
       "id": "ca5acd31eabb",
       "type": "判断题",
       "stem": "巡视时发现异常问题，应及时报告信息运维单位（部门）;紧急情况的处理，应获得信息运维单位（部门）批准。 （0.1 分）",
@@ -580,9 +769,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-11/87",
@@ -638,13 +825,32 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-12/92.4",
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "98bf679048ef",
+      "type": "判断题",
+      "stem": "某B类网段子网掩码为255.255.255.0，该子网段最大可容纳254台主机（ ） （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -658,7 +864,7 @@
         },
         {
           "key": "B",
-          "text": "中件间"
+          "text": "中间件"
         },
         {
           "key": "C",
@@ -728,9 +934,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-12/92.4",
@@ -784,13 +988,65 @@
         }
       ],
       "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-12/91",
+        "2026-08-11/87"
+      ]
+    },
+    {
+      "id": "a676526921d0",
+      "type": "判断题",
+      "stem": "电力通信和电力监控系统专业人员在信息场所从事各自专业工作，应执行本专业的安全工作规程。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 2,
+      "appearIn": [
+        "2026-08-14/88.5",
+        "2026-08-11/87"
+      ]
+    },
+    {
+      "id": "6430b4315ce1",
+      "type": "单选题",
+      "stem": "胸外心脏按压频率。按压频率应保持在（ ）。 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "100次/min"
+        },
+        {
+          "key": "B",
+          "text": "120次/min"
+        },
+        {
+          "key": "C",
+          "text": "80次/min"
+        },
+        {
+          "key": "D",
+          "text": "90次/min"
+        }
+      ],
+      "answer": "A",
       "answerKeys": [
         "A"
       ],
       "wrongCount": 2,
       "appearIn": [
-        "2026-08-12/91",
-        "2026-08-11/87"
+        "2026-08-14/88.5",
+        "2026-08-10a/88.2"
       ]
     },
     {
@@ -808,9 +1064,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 2,
       "appearIn": [
         "2026-08-11/87",
@@ -850,6 +1104,39 @@
       ]
     },
     {
+      "id": "20ff545c8e39",
+      "type": "多选题",
+      "stem": "2+1的安全隔离网闸的硬件设备组成是（ ）。 （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "内部处理单元"
+        },
+        {
+          "key": "B",
+          "text": "协议转换单元"
+        },
+        {
+          "key": "C",
+          "text": "外部处理单元"
+        },
+        {
+          "key": "D",
+          "text": "隔离安全数据交换单元"
+        }
+      ],
+      "answer": "A, C, D",
+      "answerKeys": [
+        "A",
+        "C",
+        "D"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "975e254b73b3",
       "type": "判断题",
       "stem": "AIX操作系统中的任何东西都是区分大小写的。（ ） （0.1 分）",
@@ -864,9 +1151,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -887,12 +1172,31 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
+      ]
+    },
+    {
+      "id": "277b0164093d",
+      "type": "判断题",
+      "stem": "APT又称高级持续性渗透攻击，主要集中于间谍与窃取机敏数据方面，APT攻击可能会持续几天、几周、几个月，甚至更长时间，其影响程度大，攻击范围也大（ ）。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -910,9 +1214,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -964,12 +1266,41 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
+      ]
+    },
+    {
+      "id": "62dc3cfce704",
+      "type": "单选题",
+      "stem": "IBM小型机能安装Windows操作系统吗？（ ） （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "不可以"
+        },
+        {
+          "key": "B",
+          "text": "不确定"
+        },
+        {
+          "key": "C",
+          "text": "可以"
+        },
+        {
+          "key": "D",
+          "text": "部分可以"
+        }
+      ],
+      "answer": "A",
+      "answerKeys": [
+        "A"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -987,9 +1318,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -1033,9 +1362,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -1056,9 +1383,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -1079,9 +1404,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -1227,9 +1550,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -1264,6 +1585,27 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "1b5c4ce55bf1",
+      "type": "判断题",
+      "stem": "SQL语言中，删除一个视图的命令是DROP（ ）。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -1336,29 +1678,6 @@
       ]
     },
     {
-      "id": "f672aa2e636f",
-      "type": "判断题",
-      "stem": "Telnet客户端程序可以连接到其它端口，如80，并借此获得相关服务的重要信息（ ） （0.1 分）",
-      "options": [
-        {
-          "key": "A",
-          "text": "正确"
-        },
-        {
-          "key": "B",
-          "text": "错误"
-        }
-      ],
-      "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
-      "wrongCount": 1,
-      "appearIn": [
-        "2026-08-12/91"
-      ]
-    },
-    {
       "id": "dd0da91cfa14",
       "type": "判断题",
       "stem": "Trunk 端口接收到数据帧时，当检查到数据帧不带有 VLAN ID 时，数据帧在端口加上相应的 PVID 值作为 VLAN ID。（ ） （0.1 分）",
@@ -1373,9 +1692,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -1428,9 +1745,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -1451,9 +1766,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -1474,9 +1787,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -1547,6 +1858,27 @@
       ]
     },
     {
+      "id": "2ca612ae8231",
+      "type": "判断题",
+      "stem": "《中华人民共和国网络安全法》明确了国家落实网络安全工作的职能部门和职责，其中明确规定由中央网络安全与信息化小组负责统筹协调网络安全工作和相关监督管理工作。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "f83e904f0497",
       "type": "判断题",
       "stem": "《安全生产法》中，国家鼓励生产经营单位投保财产保险。（ ） （0.1 分）",
@@ -1561,9 +1893,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -1665,39 +1995,6 @@
       ]
     },
     {
-      "id": "b4ccb3061f3e",
-      "type": "多选题",
-      "stem": "《电力安全工作规程（信息部分）》中的业务系统有哪几类？ （0.4 分）",
-      "options": [
-        {
-          "key": "A",
-          "text": "一类业务系统"
-        },
-        {
-          "key": "B",
-          "text": "三类业务系统"
-        },
-        {
-          "key": "C",
-          "text": "二类业务系统"
-        },
-        {
-          "key": "D",
-          "text": "四类业务系统"
-        }
-      ],
-      "answer": "A, B, C",
-      "answerKeys": [
-        "A",
-        "B",
-        "C"
-      ],
-      "wrongCount": 1,
-      "appearIn": [
-        "2026-08-11/87"
-      ]
-    },
-    {
       "id": "5dbda134dc6f",
       "type": "多选题",
       "stem": "《电力安全工作规程（信息部分）》中的信息系统不包括（ ） （0.4 分）",
@@ -1780,9 +2077,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -1803,9 +2098,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -1826,9 +2119,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -1866,6 +2157,37 @@
       ]
     },
     {
+      "id": "005a26ce39cb",
+      "type": "单选题",
+      "stem": "一个C类地址，并且需要将网络划分为7个子网，每个子网有15个主机，则将使用哪个子网掩码（ ） （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "255.255.224"
+        },
+        {
+          "key": "B",
+          "text": "255.255.255.224"
+        },
+        {
+          "key": "C",
+          "text": "255.255.255.240"
+        },
+        {
+          "key": "D",
+          "text": "以上都不是"
+        }
+      ],
+      "answer": "D",
+      "answerKeys": [
+        "D"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "5915020fd68f",
       "type": "判断题",
       "stem": "一张信息工作任务单中，工作票签发人与工作负责人可以互相兼任。 （0.1 分）",
@@ -1880,9 +2202,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -1903,9 +2223,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -1941,6 +2259,39 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
+      ]
+    },
+    {
+      "id": "33e1848feac6",
+      "type": "多选题",
+      "stem": "上网行为管理的要素（ ） （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "应用"
+        },
+        {
+          "key": "B",
+          "text": "用户"
+        },
+        {
+          "key": "C",
+          "text": "终端"
+        },
+        {
+          "key": "D",
+          "text": "身份"
+        }
+      ],
+      "answer": "A, B, C",
+      "answerKeys": [
+        "A",
+        "B",
+        "C"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -2039,6 +2390,39 @@
       ]
     },
     {
+      "id": "f8f93dba55cf",
+      "type": "多选题",
+      "stem": "下列可能出现在Windows“资源管理器”窗口左部的选项是（ ） （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "(C:)"
+        },
+        {
+          "key": "B",
+          "text": "我的电脑"
+        },
+        {
+          "key": "C",
+          "text": "桌面"
+        },
+        {
+          "key": "D",
+          "text": "资源管理"
+        }
+      ],
+      "answer": "A, B, C",
+      "answerKeys": [
+        "A",
+        "B",
+        "C"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "ee61d8e3d7ba",
       "type": "多选题",
       "stem": "下列哪些命令可以用来查看DCC端口（在端口S1上配置）信息？（ ） （0.2 分）",
@@ -2067,6 +2451,37 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "ae71722d09ca",
+      "type": "单选题",
+      "stem": "下列属于信息系统根据运维工作中运维外包的情况的是（ ） （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "以上选项都是"
+        },
+        {
+          "key": "B",
+          "text": "完全外包运维模式"
+        },
+        {
+          "key": "C",
+          "text": "混合运维模式"
+        },
+        {
+          "key": "D",
+          "text": "自主运维模式"
+        }
+      ],
+      "answer": "A",
+      "answerKeys": [
+        "A"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -2171,38 +2586,6 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
-      ]
-    },
-    {
-      "id": "a5aa3d7f6114",
-      "type": "多选题",
-      "stem": "下列有关 MAC 地址的说法中哪些是错误的（ ） （0.4 分）",
-      "options": [
-        {
-          "key": "A",
-          "text": "MAC 地址固化在 ROM 中，通常情况下无法改动"
-        },
-        {
-          "key": "B",
-          "text": "MAC 地址是一种便于更改的逻辑地址"
-        },
-        {
-          "key": "C",
-          "text": "以太网用 MAC 地址标识主机"
-        },
-        {
-          "key": "D",
-          "text": "通常只有终端主机才需要 MAC 地址，路由器等网络设备不需要"
-        }
-      ],
-      "answer": "B, D",
-      "answerKeys": [
-        "B",
-        "D"
-      ],
-      "wrongCount": 1,
-      "appearIn": [
-        "2026-08-12/92.4"
       ]
     },
     {
@@ -2413,9 +2796,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -2499,9 +2880,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -2634,6 +3013,37 @@
       ]
     },
     {
+      "id": "09763c0ac78e",
+      "type": "单选题",
+      "stem": "主机设备或存储设备（ ），应验证所承载的业务运行正常。 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "检修工作中"
+        },
+        {
+          "key": "B",
+          "text": "检修工作开始前"
+        },
+        {
+          "key": "C",
+          "text": "检修工作结束前"
+        },
+        {
+          "key": "D",
+          "text": "检修工作结束后"
+        }
+      ],
+      "answer": "C",
+      "answerKeys": [
+        "C"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "d0d4fa375a66",
       "type": "判断题",
       "stem": "主机设备是指提供物理上独立服务单位的实体或虚拟计算机，包括其附属的存储以及运行在该设备上的操作系统。 （0.1 分）",
@@ -2648,9 +3058,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -2671,9 +3079,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-13/95"
@@ -2792,9 +3198,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -2815,12 +3219,42 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "7fcfd32c0119",
+      "type": "多选题",
+      "stem": "以下不属于工作许可人的安全责任有（ ） （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "执行工作票所列由其负责的安全措施"
+        },
+        {
+          "key": "B",
+          "text": "检查工作票所列安全措施是否正确完备，是否符合现场实际条件，必要时予以补充完善"
+        },
+        {
+          "key": "C",
+          "text": "确认工作具备条件，工作不具备条件时应退回工作票"
+        },
+        {
+          "key": "D",
+          "text": "确认工作票所列的安全措施已实施"
+        }
+      ],
+      "answer": "A, B",
+      "answerKeys": [
+        "A",
+        "B"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -3093,9 +3527,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -3116,9 +3548,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -3139,12 +3569,31 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
+      ]
+    },
+    {
+      "id": "edcb5cda7000",
+      "type": "判断题",
+      "stem": "作业人员对《电力安全工作规程（信息部分）》，应每年考试一次。因故间断信息工作连续六个月以上者，应重新学习本规程后，方可恢复工作。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -3177,6 +3626,68 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
+      ]
+    },
+    {
+      "id": "f5e216f49dda",
+      "type": "单选题",
+      "stem": "使用59.17.148.64/26划分3个子网，其中第一个子网能容纳13台主机，第二个子网能容纳12台主机，第三个子网容纳30台主机。请分别写出三个子网的网络地址（ ）。 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "59.17.148.59，59.17.148.79，59.17.148.9095"
+        },
+        {
+          "key": "B",
+          "text": "59.17.148.60，59.17.148.80，59.17.148.90"
+        },
+        {
+          "key": "C",
+          "text": "59.17.148.64，59.17.148.80，59.17.148.96"
+        },
+        {
+          "key": "D",
+          "text": "59.17.148.65，59.17.148.81，59.17.148.91"
+        }
+      ],
+      "answer": "C",
+      "answerKeys": [
+        "C"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
+      "id": "f3f0f9beb40f",
+      "type": "多选题",
+      "stem": "使用59.17.148.64/26划分3个子网，其中第一个子网能容纳13台主机，第二个子网能容纳12台主机，第三个子网容纳30台主机请分别写出三个子网的网络地址（ ） （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "59.17.148.59，59.17.148.79，59.17.148.9095"
+        },
+        {
+          "key": "B",
+          "text": "59.17.148.60，59.17.148.80，59.17.148.90"
+        },
+        {
+          "key": "C",
+          "text": "59.17.148.64，59.17.148.80，59.17.148.96"
+        },
+        {
+          "key": "D",
+          "text": "59.17.148.65，59.17.148.81，59.17.148.91"
+        }
+      ],
+      "answer": "C",
+      "answerKeys": [
+        "C"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -3225,9 +3736,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -3265,6 +3774,37 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "7428cf4506c1",
+      "type": "单选题",
+      "stem": "依据《电力安全事故应急处置和调查处理条例》，事故发生后，有关电力企业应当立即采取相应的（ ），控制事故范围，防止发生电网系统性崩溃和瓦解。 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "应急处理方案"
+        },
+        {
+          "key": "B",
+          "text": "紧急处置措施"
+        },
+        {
+          "key": "C",
+          "text": "紧急防范措施"
+        },
+        {
+          "key": "D",
+          "text": "预防措施"
+        }
+      ],
+      "answer": "B",
+      "answerKeys": [
+        "B"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -3344,12 +3884,31 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
+      ]
+    },
+    {
+      "id": "adb85ca01d3e",
+      "type": "判断题",
+      "stem": "信息内网办公计算机可以配置、使用无线上网卡等无线设备，通过电话拨号、无线等各种方式连接到互联网。（ ） （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -3367,9 +3926,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -3454,9 +4011,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -3477,12 +4032,31 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "b3f5ad221ebc",
+      "type": "判断题",
+      "stem": "信息工作票一份由工作负责人收执，另一份由工作票签发人收执（ ）。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -3500,12 +4074,43 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
+      ]
+    },
+    {
+      "id": "ccbfeda66716",
+      "type": "多选题",
+      "stem": "信息系统安全管理应该遵循四统一原则包括（ ） （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "统一组织建设"
+        },
+        {
+          "key": "B",
+          "text": "统一规划"
+        },
+        {
+          "key": "C",
+          "text": "统一资金"
+        },
+        {
+          "key": "D",
+          "text": "统一领导"
+        }
+      ],
+      "answer": "A, B, D",
+      "answerKeys": [
+        "A",
+        "B",
+        "D"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -3523,9 +4128,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -3546,9 +4149,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -3569,9 +4170,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -3592,9 +4191,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -3647,18 +4244,16 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
       ]
     },
     {
-      "id": "8cdc311bc415",
+      "id": "d1460e923a3b",
       "type": "判断题",
-      "stem": "信息设备变更用途或下线，宜擦除或销毁其中数据。（ ） （0.1 分）",
+      "stem": "信息系统远程检修应使用运维专机，并使用加密或公用的传输协议（ ）。 （0.1 分）",
       "options": [
         {
           "key": "A",
@@ -3670,12 +4265,10 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
-        "2026-08-12/92.4"
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -3693,9 +4286,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -3716,12 +4307,41 @@
         }
       ],
       "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "7c66b81df573",
+      "type": "单选题",
+      "stem": "共享监视策略能监视哪些操作？（ ） （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "修改"
+        },
+        {
+          "key": "B",
+          "text": "删除"
+        },
+        {
+          "key": "C",
+          "text": "新建"
+        },
+        {
+          "key": "D",
+          "text": "查看"
+        }
+      ],
+      "answer": "B",
       "answerKeys": [
         "B"
       ],
       "wrongCount": 1,
       "appearIn": [
-        "2026-08-10b/83.3"
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -3739,9 +4359,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -3762,9 +4380,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -3785,9 +4401,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -3842,9 +4456,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -3865,9 +4477,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -3936,29 +4546,6 @@
       ]
     },
     {
-      "id": "d4c0d6906819",
-      "type": "判断题",
-      "stem": "办公计算机宜安装防病毒、桌面管理等安全防护软件。 （0.1 分）",
-      "options": [
-        {
-          "key": "A",
-          "text": "正确"
-        },
-        {
-          "key": "B",
-          "text": "错误"
-        }
-      ],
-      "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
-      "wrongCount": 1,
-      "appearIn": [
-        "2026-08-10b/83.3"
-      ]
-    },
-    {
       "id": "bd17f8167aca",
       "type": "判断题",
       "stem": "办公计算机宜安装防病毒、桌面管理等安全防护软件。（ ） （0.1 分）",
@@ -3973,9 +4560,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -3996,12 +4581,41 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
+      ]
+    },
+    {
+      "id": "1fba9136917d",
+      "type": "单选题",
+      "stem": "办理信息工作票延期手续，应在信息工作票的有效期内，由工作负责人向（ ）提出申请，得到同意后给予办理 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "业务管理单位"
+        },
+        {
+          "key": "B",
+          "text": "信息运维单位"
+        },
+        {
+          "key": "C",
+          "text": "工作票签发人"
+        },
+        {
+          "key": "D",
+          "text": "工作许可人"
+        }
+      ],
+      "answer": "D",
+      "answerKeys": [
+        "D"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -4050,9 +4664,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -4073,9 +4685,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -4096,9 +4706,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -4119,9 +4727,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -4142,9 +4748,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -4227,9 +4831,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -4267,6 +4869,37 @@
       ]
     },
     {
+      "id": "5d2c2e69fd9e",
+      "type": "单选题",
+      "stem": "在OSI参考模型的物理层中没有定义下面的哪一个？（ ） （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "bitstream transmission"
+        },
+        {
+          "key": "B",
+          "text": "hardware addresses"
+        },
+        {
+          "key": "C",
+          "text": "physical interface"
+        },
+        {
+          "key": "D",
+          "text": "voltage levels"
+        }
+      ],
+      "answer": "B",
+      "answerKeys": [
+        "B"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "3ffc49ba41ba",
       "type": "判断题",
       "stem": "在SQL中，删除视图用DELETE VIEW命令。（ ） （0.1 分）",
@@ -4281,9 +4914,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -4304,9 +4935,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -4327,9 +4956,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -4350,9 +4977,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -4404,9 +5029,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -4441,6 +5064,39 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
+      ]
+    },
+    {
+      "id": "78637334f7a7",
+      "type": "多选题",
+      "stem": "在数据挖掘的分析方法中，直接数据挖掘包括（ ） （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "估值"
+        },
+        {
+          "key": "B",
+          "text": "关联"
+        },
+        {
+          "key": "C",
+          "text": "分类"
+        },
+        {
+          "key": "D",
+          "text": "预言"
+        }
+      ],
+      "answer": "A, C, D",
+      "answerKeys": [
+        "A",
+        "C",
+        "D"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -4506,6 +5162,39 @@
       ]
     },
     {
+      "id": "e5e7d63b7a11",
+      "type": "多选题",
+      "stem": "在装卸搬运爆炸性物品、氧化剂及有机过氧化物等对撞击和摩擦敏感度较高的物品时，不应( ),以防引起火灾和爆炸。 （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "拖拉"
+        },
+        {
+          "key": "B",
+          "text": "撞击"
+        },
+        {
+          "key": "C",
+          "text": "翻滚"
+        },
+        {
+          "key": "D",
+          "text": "轻拿轻放"
+        }
+      ],
+      "answer": "A, B, C",
+      "answerKeys": [
+        "A",
+        "B",
+        "C"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "5279f4eb1d13",
       "type": "单选题",
       "stem": "在路由器上，键入命令的某个关键字的前几个字母，按下（ ）键可以补全命令 （0.2 分）",
@@ -4534,6 +5223,58 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
+      ]
+    },
+    {
+      "id": "7e9a6283f2ef",
+      "type": "单选题",
+      "stem": "在运维过程中，为了诊断引起服务中断的根本原因和确定解决方案所需的活动称为（ ）。 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "事件管理"
+        },
+        {
+          "key": "B",
+          "text": "知识管理"
+        },
+        {
+          "key": "C",
+          "text": "配置管理"
+        },
+        {
+          "key": "D",
+          "text": "问题管理"
+        }
+      ],
+      "answer": "D",
+      "answerKeys": [
+        "D"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
+      "id": "50e04b45976f",
+      "type": "判断题",
+      "stem": "域名（ ）即为连接到因特网上的计算机所指定的名字。（ ） （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -4569,6 +5310,37 @@
       ]
     },
     {
+      "id": "70984f8fb381",
+      "type": "单选题",
+      "stem": "如果我们在默认掩码后面加入了4位，我们可以定义的子网数量有多少（ ） （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "12"
+        },
+        {
+          "key": "B",
+          "text": "14"
+        },
+        {
+          "key": "C",
+          "text": "15"
+        },
+        {
+          "key": "D",
+          "text": "16"
+        }
+      ],
+      "answer": "B",
+      "answerKeys": [
+        "B"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "93ac1ee23386",
       "type": "判断题",
       "stem": "子网划分技术是在自然分类 IP 地址划分的基础上增加了主机号部分实现的。（ ） （0.1 分）",
@@ -4583,9 +5355,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -4606,9 +5376,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -4629,9 +5397,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -4684,9 +5450,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -4707,9 +5471,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -4764,9 +5526,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -4787,9 +5547,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -4810,9 +5568,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -4833,9 +5589,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -4903,6 +5657,37 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-13/95"
+      ]
+    },
+    {
+      "id": "b1a5d7d8197f",
+      "type": "单选题",
+      "stem": "对不能立即消除的火灾隐患，各级部门应及时将存在的火灾隐患向（ ）报告，提出整改方案，确定整改措施、期限以及责任部门。 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "上级单位"
+        },
+        {
+          "key": "B",
+          "text": "政府部门"
+        },
+        {
+          "key": "C",
+          "text": "本单位"
+        },
+        {
+          "key": "D",
+          "text": "消防主管单位"
+        }
+      ],
+      "answer": "C",
+      "answerKeys": [
+        "C"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -5045,44 +5830,10 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
-      ]
-    },
-    {
-      "id": "7afc9b132dee",
-      "type": "多选题",
-      "stem": "属于主动防护技术一般有（ ） （0.4 分）",
-      "options": [
-        {
-          "key": "A",
-          "text": "入侵检测"
-        },
-        {
-          "key": "B",
-          "text": "安全扫描"
-        },
-        {
-          "key": "C",
-          "text": "数据加密"
-        },
-        {
-          "key": "D",
-          "text": "路由过滤"
-        }
-      ],
-      "answer": "B, C",
-      "answerKeys": [
-        "B",
-        "C"
-      ],
-      "wrongCount": 1,
-      "appearIn": [
-        "2026-08-10a/88.2"
       ]
     },
     {
@@ -5223,9 +5974,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -5246,9 +5995,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -5301,9 +6048,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -5340,6 +6085,27 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
+      ]
+    },
+    {
+      "id": "0271690c7109",
+      "type": "判断题",
+      "stem": "影响其他设备正常运行的故障设备应及时停运。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -5421,9 +6187,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -5444,9 +6208,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -5498,9 +6260,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -5521,9 +6281,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -5544,9 +6302,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -5598,9 +6354,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -5686,9 +6440,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -5743,12 +6495,64 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
+      ]
+    },
+    {
+      "id": "aa4c8b03f03c",
+      "type": "多选题",
+      "stem": "数据库检修前，应备份可能受影响的（ ）等。 （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "业务数据"
+        },
+        {
+          "key": "B",
+          "text": "日志文件"
+        },
+        {
+          "key": "C",
+          "text": "运行参数"
+        },
+        {
+          "key": "D",
+          "text": "配置文件"
+        }
+      ],
+      "answer": "A, B, D",
+      "answerKeys": [
+        "A",
+        "B",
+        "D"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
+      "id": "264cd2e43327",
+      "type": "判断题",
+      "stem": "数据窃听是一种主动攻击技术（ ）。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -5863,9 +6667,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -5951,9 +6753,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -5992,6 +6792,70 @@
       ]
     },
     {
+      "id": "9af44f81f731",
+      "type": "多选题",
+      "stem": "机房应保障疏散通道、安全出口畅通，并设置（ ）和（ ）。 （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "应急照明设施"
+        },
+        {
+          "key": "B",
+          "text": "消防安全疏散指示标志"
+        },
+        {
+          "key": "C",
+          "text": "消防设施"
+        },
+        {
+          "key": "D",
+          "text": "灭火器材"
+        }
+      ],
+      "answer": "A, B",
+      "answerKeys": [
+        "A",
+        "B"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
+      "id": "3c6bb86bb037",
+      "type": "多选题",
+      "stem": "机房应根据情况，选配相应灭火器材：用于扑灭有机溶剂等易燃液体、可燃气体和电气设备初期火灾的（ ）；用于扑救电气设备、仪器仪表以及油类等初期火灾的（ ）。 （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "二氧化碳灭火器"
+        },
+        {
+          "key": "B",
+          "text": "干粉灭火器"
+        },
+        {
+          "key": "C",
+          "text": "水基型灭火器"
+        },
+        {
+          "key": "D",
+          "text": "泡沫灭火器"
+        }
+      ],
+      "answer": "B, C",
+      "answerKeys": [
+        "B",
+        "C"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "2a2da58b05b7",
       "type": "判断题",
       "stem": "某B类网段子网掩码为255.255.255.0，该子网段最大可容纳254台主机（ ）。 （0.1 分）",
@@ -6006,9 +6870,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -6154,9 +7016,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -6177,9 +7037,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -6200,12 +7058,31 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
+      ]
+    },
+    {
+      "id": "603e45a488a5",
+      "type": "判断题",
+      "stem": "检修工作如需停运数据库、中间件，应确认所承载的业务可停用或已转移。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -6223,9 +7100,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -6246,9 +7121,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -6300,9 +7173,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -6323,9 +7194,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -6400,6 +7269,27 @@
       ]
     },
     {
+      "id": "56525579ab51",
+      "type": "判断题",
+      "stem": "现场使用的工器具、调试计算机（或其他专用设备）、外接存储设备、软件工具等应符合有关安全要求。（ ） （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "6006d57737b0",
       "type": "判断题",
       "stem": "现场使用的工器具、调试计算机（或其他专用设备）、外接存储设备、软件工具等应符合有关要求。 （0.1 分）",
@@ -6414,9 +7304,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -6468,9 +7356,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-13/95"
@@ -6491,9 +7377,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-13/95"
@@ -6640,9 +7524,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -6663,9 +7545,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -6717,18 +7597,54 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
       ]
     },
     {
-      "id": "a676526921d0",
+      "id": "9bc2d5901d51",
+      "type": "多选题",
+      "stem": "病毒传播的途径有（ ） （0.4 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "内存条"
+        },
+        {
+          "key": "B",
+          "text": "电子邮件"
+        },
+        {
+          "key": "C",
+          "text": "移动硬盘"
+        },
+        {
+          "key": "D",
+          "text": "网络浏览"
+        },
+        {
+          "key": "E",
+          "text": "聊天程序"
+        }
+      ],
+      "answer": "B, C, D, E",
+      "answerKeys": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
+      "id": "ae4992ac27ea",
       "type": "判断题",
-      "stem": "电力通信和电力监控系统专业人员在信息场所从事各自专业工作，应执行本专业的安全工作规程。 （0.1 分）",
+      "stem": "直流开关或熔断器未断开前，不得断开蓄电池之间的连接。 （0.1 分）",
       "options": [
         {
           "key": "A",
@@ -6740,12 +7656,10 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
-        "2026-08-11/87"
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -6763,9 +7677,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -6848,9 +7760,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -6911,6 +7821,27 @@
       ]
     },
     {
+      "id": "1f8959ff27f7",
+      "type": "判断题",
+      "stem": "终端设备及外围设备交由外部单位维修处理应经信息运维单位（部门）批准（ ）。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "正确",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "b3753e968f0d",
       "type": "判断题",
       "stem": "终端设备及外围设备交由外部单位维修处理应经本单位批准。 （0.1 分）",
@@ -6925,9 +7856,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -6965,6 +7894,27 @@
       ]
     },
     {
+      "id": "9335e1b029f7",
+      "type": "判断题",
+      "stem": "缺省情况下，防火墙工作模式为路由模式，切换工作模式后可直接进行进一步配置（ ） （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "9d6303e32cf7",
       "type": "判断题",
       "stem": "网络中的一台路由器可能属于多个不同的区域，但是必须有其中一个区域是骨干区域（ ） （0.1 分）",
@@ -6979,9 +7929,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-11/87"
@@ -7096,9 +8044,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -7129,37 +8075,6 @@
       "answer": "C",
       "answerKeys": [
         "C"
-      ],
-      "wrongCount": 1,
-      "appearIn": [
-        "2026-08-10a/88.2"
-      ]
-    },
-    {
-      "id": "6430b4315ce1",
-      "type": "单选题",
-      "stem": "胸外心脏按压频率。按压频率应保持在（ ）。 （0.2 分）",
-      "options": [
-        {
-          "key": "A",
-          "text": "100次/min"
-        },
-        {
-          "key": "B",
-          "text": "120次/min"
-        },
-        {
-          "key": "C",
-          "text": "80次/min"
-        },
-        {
-          "key": "D",
-          "text": "90次/min"
-        }
-      ],
-      "answer": "A",
-      "answerKeys": [
-        "A"
       ],
       "wrongCount": 1,
       "appearIn": [
@@ -7261,6 +8176,37 @@
       "wrongCount": 1,
       "appearIn": [
         "2026-08-13/95"
+      ]
+    },
+    {
+      "id": "0dbad3b6104f",
+      "type": "单选题",
+      "stem": "设备、业务系统接入公司网络应经（ ）批准，并严格遵守公司网络准入要求。 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "业务主管部门(业务归口管理部门)"
+        },
+        {
+          "key": "B",
+          "text": "信息运维单位(部门)"
+        },
+        {
+          "key": "C",
+          "text": "信息通信调度部门"
+        },
+        {
+          "key": "D",
+          "text": "分管领导"
+        }
+      ],
+      "answer": "B",
+      "answerKeys": [
+        "B"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -7443,9 +8389,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"
@@ -7466,9 +8410,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -7489,12 +8431,41 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
+      ]
+    },
+    {
+      "id": "fd1d6979bd7c",
+      "type": "单选题",
+      "stem": "进行数据库（ ），禁止使用可能导致数据库宕机的工具。 （0.2 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "操作前"
+        },
+        {
+          "key": "B",
+          "text": "操作后"
+        },
+        {
+          "key": "C",
+          "text": "操作时"
+        },
+        {
+          "key": "D",
+          "text": "误操作"
+        }
+      ],
+      "answer": "C",
+      "answerKeys": [
+        "C"
+      ],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
       ]
     },
     {
@@ -7529,6 +8500,27 @@
       ]
     },
     {
+      "id": "4c43d646dd32",
+      "type": "判断题",
+      "stem": "采用不同标准的无线网络所使用的频率不同，所支持的最高传输速度也会不同，所以互相不能之间进行通信（ ）。 （0.1 分）",
+      "options": [
+        {
+          "key": "A",
+          "text": "正确"
+        },
+        {
+          "key": "B",
+          "text": "错误"
+        }
+      ],
+      "answer": "错误",
+      "answerKeys": [],
+      "wrongCount": 1,
+      "appearIn": [
+        "2026-08-14/88.5"
+      ]
+    },
+    {
       "id": "0cc55d0e653b",
       "type": "判断题",
       "stem": "防火墙中的防病毒功能模块，必须是基于文件的病毒扫描防御，只有对带了文件附件的协议才能进行检测。（ ） （0.1 分）",
@@ -7543,9 +8535,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -7566,9 +8556,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/91"
@@ -7589,9 +8577,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-12/92.4"
@@ -7612,9 +8598,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -7635,9 +8619,7 @@
         }
       ],
       "answer": "正确",
-      "answerKeys": [
-        "A"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -7658,9 +8640,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10b/83.3"
@@ -7681,9 +8661,7 @@
         }
       ],
       "answer": "错误",
-      "answerKeys": [
-        "B"
-      ],
+      "answerKeys": [],
       "wrongCount": 1,
       "appearIn": [
         "2026-08-10a/88.2"

@@ -707,8 +707,38 @@
       .replace(/"/g, "&quot;");
   }
 
+  function normalizeQuestion(q) {
+    if (!q || typeof q !== "object") return q;
+    // 判断题：答案常为「正确/错误」，但选项是 A/B；补齐 answerKeys
+    if (q.type === "判断题") {
+      const opts = Array.isArray(q.options) ? q.options : [];
+      if (opts.length < 2) {
+        q.options = [
+          { key: "A", text: "正确" },
+          { key: "B", text: "错误" },
+        ];
+      }
+      const keys = q.answerKeys || [];
+      if (!keys.length) {
+        const ans = String(q.answer || "").trim();
+        if (ans === "正确" || ans === "对" || ans === "是" || ans === "A") {
+          q.answerKeys = ["A"];
+          if (ans === "A") q.answer = "正确";
+        } else if (ans === "错误" || ans === "错" || ans === "否" || ans === "B") {
+          q.answerKeys = ["B"];
+          if (ans === "B") q.answer = "错误";
+        } else {
+          const hit = (q.options || []).find((o) => o && o.text === ans);
+          if (hit && hit.key) q.answerKeys = [hit.key];
+        }
+      }
+    }
+    return q;
+  }
+
   async function reloadBank() {
     state.bank = await api("/api/bank");
+    (state.bank.questions || []).forEach(normalizeQuestion);
     cacheQuestions(state.bank.questions || []);
   }
 

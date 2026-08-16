@@ -707,6 +707,158 @@
       .replace(/"/g, "&quot;");
   }
 
+  function answerKeysOf(q) {
+    if (!q) return [];
+    const keys = [...(q.answerKeys || [])].map(String);
+    if (keys.length) return keys;
+    if (q.type !== "判断题") return [];
+    const ans = String(q.answer || "").trim();
+    if (ans === "正确" || ans === "对" || ans === "是" || ans === "A") return ["A"];
+    if (ans === "错误" || ans === "错" || ans === "否" || ans === "B") return ["B"];
+    const hit = (q.options || []).find((o) => o && o.text === ans);
+    return hit && hit.key ? [String(hit.key)] : [];
+  }
+
+  function isActuallyCorrect(q, selected) {
+    const want = answerKeysOf(q).slice().sort().join(",");
+    const sel = [...(selected || [])].map(String).sort().join(",");
+    return want.length > 0 && sel === want;
+  }
+
+  /** 修正判断题因 answerKeys 为空被误判错的历史统计 */
+  async function repairJudgeFalseWrongs() {
+    const qs = (state.bank && state.bank.questions) || [];
+    const byId = {};
+    qs.forEach((q) => {
+      byId[q.id] = q;
+    });
+    let st;
+    try {
+      st = await api("/api/state");
+    } catch (e) {
+      return false;
+    }
+    const hist = Array.isArray(st.history) ? st.history : [];
+    let changed = false;
+    hist.forEach((h) => {
+      const q = byId[h.id];
+      if (!q || q.type !== "判断题") return;
+      const act = isActuallyCorrect(q, h.selected);
+      if (Boolean(h.correct) !== act) {
+        h.correct = act;
+        changed = true;
+      }
+    });
+
+    const practice = {};
+    let answered = 0;
+    let correct = 0;
+    let wrong = 0;
+    hist.forEach((h) => {
+      const q = byId[h.id];
+      answered += 1;
+      let act = Boolean(h.correct);
+      if (q && q.type === "判断题") {
+        act = isActuallyCorrect(q, h.selected);
+        h.correct = act;
+      }
+      if (act) {
+        correct += 1;
+        if (practice[h.id]) {
+          practice[h.id].lastCorrect = true;
+          practice[h.id].lastCorrectAt = h.at;
+        }
+      } else {
+        wrong += 1;
+        const item = practice[h.id] || {
+          count: 0,
+          selectedHistory: [],
+          lastCorrect: false,
+        };
+        item.count = Number(item.count || 0) + 1;
+        item.lastCorrect = false;
+        const sh = item.selectedHistory || [];
+        sh.push({ at: h.at, selected: h.selected || [] });
+        item.selectedHistory = sh.slice(-20);
+        practice[h.id] = item;
+      }
+    });
+
+    const oldPw = st.practiceWrongs || {};
+    const oldStats = st.stats || {};
+    if (
+      Number(oldStats.answered || 0) !== answered ||
+      Number(oldStats.correct || 0) !== correct ||
+      Number(oldStats.wrong || 0) !== wrong ||
+      JSON.stringify(Object.keys(oldPw).sort()) !== JSON.stringify(Object.keys(practice).sort())
+    ) {
+      changed = true;
+    }
+    // also if any practice count dropped
+    Object.keys(oldPw).forEach((id) => {
+      const o = Number((oldPw[id] && oldPw[id].count) || 0);
+      const n = Number((practice[id] && practice[id].count) || 0);
+      if (n !== o) changed = true;
+    });
+
+    const progress = { ...(st.progressByMode || {}) };
+    Object.keys(progress).forEach((mode) => {
+      const p = progress[mode] || {};
+      const sess = { ...(p.session || {}) };
+      const wids = Array.isArray(sess.wrongIds) ? sess.wrongIds.slice() : [];
+      const kept = wids.filter((wid) => {
+        const q = byId[wid];
+        if (!q || q.type !== "判断题") return true;
+        return hist.some((h) => h.id === wid && !isActuallyCorrect(q, h.selected));
+      });
+      if (kept.length !== wids.length) {
+        const diff = wids.length - kept.length;
+        sess.wrongIds = kept;
+        sess.wrong = Math.max(0, Number(sess.wrong || 0) - diff);
+        sess.correct = Number(sess.correct || 0) + diff;
+        progress[mode] = { ...p, session: sess };
+        changed = true;
+      }
+    });
+
+    if (!changed) return false;
+
+    const repaired = {
+      choppedIds: st.choppedIds || [],
+      choppedMeta: st.choppedMeta || {},
+      practiceWrongs: practice,
+      stats: {
+        answered,
+        correct,
+        wrong,
+        chopped: (st.choppedIds || []).length,
+      },
+      history: hist,
+      progressByMode: progress,
+    };
+    try {
+      await api("/api/state/restore", {
+        method: "POST",
+        body: JSON.stringify({ state: repaired }),
+      });
+      mirrorStateToLocal(repaired);
+      if (state.bank) state.bank.state = {
+        ...(state.bank.state || {}),
+        stats: repaired.stats,
+        practiceWrongs: repaired.practiceWrongs,
+        choppedIds: repaired.choppedIds,
+        choppedMeta: repaired.choppedMeta,
+        progressByMode: repaired.progressByMode,
+        history: repaired.history,
+      };
+      console.info("已修正判断题误判统计", oldStats, "->", repaired.stats);
+      return true;
+    } catch (e) {
+      console.error(e);
+      return false;
+    }
+  }
+
   function normalizeQuestion(q) {
     if (!q || typeof q !== "object") return q;
     // 判断题：答案常为「正确/错误」，但选项是 A/B；补齐 answerKeys
@@ -787,6 +939,9 @@
     bind();
     await reloadBank();
     if (await maybeRestoreFromLocal()) {
+      await reloadBank();
+    }
+    if (await repairJudgeFalseWrongs()) {
       await reloadBank();
     }
     await syncAllProgressWithBank();

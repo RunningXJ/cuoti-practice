@@ -732,6 +732,24 @@
     qs.forEach((q) => {
       byId[q.id] = q;
     });
+    try {
+      const cache = JSON.parse(localStorage.getItem("qCache") || "{}");
+      Object.keys(cache).forEach((id) => {
+        if (byId[id]) return;
+        const c = cache[id] || {};
+        byId[id] = normalizeQuestion({
+          id,
+          type: c.type || "判断题",
+          stem: c.stem || "",
+          answer: c.answer || "",
+          options: [
+            { key: "A", text: "正确" },
+            { key: "B", text: "错误" },
+          ],
+          answerKeys: [],
+        });
+      });
+    } catch (e) {}
     let st;
     try {
       st = await api("/api/state");

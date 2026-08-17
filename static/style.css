@@ -266,14 +266,26 @@ body { padding-bottom: calc(24px + var(--safe-bottom)); }
 
 .quiz-actions {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px;
+  grid-template-columns: 1fr 1.2fr 1fr auto;
+  gap: 8px;
   margin-top: 14px;
   position: sticky;
   bottom: calc(10px + var(--safe-bottom));
 }
 .quiz-actions .primary { text-align: center; }
-.quiz-actions .chop { min-width: 88px; }
+.quiz-actions .chop { min-width: 72px; }
+.quiz-actions .ghost:disabled,
+.quiz-actions .primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+@media (max-width: 420px) {
+  .quiz-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+  .quiz-actions #btnSubmit { grid-column: 1 / -1; }
+  .quiz-actions #btnChop { grid-column: 1 / -1; }
+}
 
 .feedback {
   margin-top: 12px;

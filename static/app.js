@@ -18,6 +18,7 @@
     index: 0,
     selected: new Set(),
     answered: false,
+    answerLog: {},
     session: { total: 0, correct: 0, wrong: 0, wrongIds: [] },
     mode: "all",
     shuffle: true,
@@ -372,6 +373,7 @@
     if (state.shuffle) list = shuffle(list);
     state.queue = list;
     state.index = 0;
+    state.answerLog = {};
     state.session = { total: list.length, correct: 0, wrong: 0, wrongIds: [] };
     await saveProgress();
     show("quizView");
@@ -399,6 +401,7 @@
     state.shuffle = !!synced.shuffle;
     state.queue = queue;
     state.index = index;
+    state.answerLog = {};
     state.session = {
       total: queue.length,
       correct: (synced.session && synced.session.correct) || 0,
@@ -420,20 +423,58 @@
     return a === b && a.length > 0;
   }
 
+  function updateNavButtons() {
+    const atFirst = state.index <= 0;
+    const atLast = state.index >= state.queue.length - 1;
+    const prev = $("#btnPrev");
+    const next = $("#btnNext");
+    if (prev) prev.disabled = atFirst;
+    if (next) {
+      next.disabled = false;
+      if (atLast && state.answered) next.textContent = "完成本轮";
+      else if (atLast && !state.answered) next.textContent = "下一题";
+      else next.textContent = "下一题";
+      // 最后一题且未作答时，下一题不可跳过结束
+      if (atLast && !state.answered) next.disabled = true;
+    }
+  }
+
+  function applyAnsweredUI(q, correct) {
+    $$("#optBox .opt").forEach((el) => {
+      const key = el.dataset.key;
+      el.disabled = true;
+      el.classList.toggle("selected", state.selected.has(key));
+      if ((q.answerKeys || []).includes(key)) el.classList.add("correct");
+      if (state.selected.has(key) && !(q.answerKeys || []).includes(key))
+        el.classList.add("wrong");
+    });
+    const fb = $("#feedback");
+    fb.classList.remove("hidden", "ok", "bad");
+    fb.classList.add(correct ? "ok" : "bad");
+    fb.innerHTML = correct
+      ? "回答正确"
+      : `回答错误。正确答案：<strong>${escapeHtml(
+          q.answer || (q.answerKeys || []).join(",")
+        )}</strong>`;
+    $("#btnSubmit").classList.add("hidden");
+  }
+
   function renderQuestion() {
     const q = currentQ();
     if (!q) {
       finishSession();
       return;
     }
-    state.selected = new Set();
-    state.answered = false;
-    $("#btnSubmit").classList.remove("hidden");
-    $("#btnNext").classList.add("hidden");
-    $("#feedback").classList.add("hidden");
+    const logged = state.answerLog[q.id];
+    state.selected = logged ? new Set(logged.selected || []) : new Set();
+    state.answered = !!logged;
 
-    const pct = (state.index / Math.max(state.queue.length, 1)) * 100;
-    $("#progressFill").style.width = pct + "%";
+    $("#btnSubmit").classList.toggle("hidden", state.answered);
+    $("#feedback").classList.add("hidden");
+    $("#feedback").classList.remove("ok", "bad");
+
+    const pct = ((state.index + (state.answered ? 1 : 0)) / Math.max(state.queue.length, 1)) * 100;
+    $("#progressFill").style.width = Math.min(100, pct) + "%";
     $("#progressText").textContent = `${MODE_LABELS[state.mode] || ""} · 第 ${
       state.index + 1
     } / ${state.queue.length} 题`;
@@ -473,6 +514,11 @@
       btn.addEventListener("click", () => toggleOpt(opt.key, multi));
       box.appendChild(btn);
     });
+
+    if (logged) {
+      applyAnsweredUI(q, !!logged.correct);
+    }
+    updateNavButtons();
   }
 
   function toggleOpt(key, multi) {
@@ -490,6 +536,8 @@
 
   async function submitAnswer() {
     const q = currentQ();
+    if (!q) return;
+    if (state.answerLog[q.id]) return;
     if (!state.selected.size) {
       alert(
         q.type === "多选题" || (q.answerKeys || []).length > 1
@@ -500,33 +548,18 @@
     }
     const correct = sameAnswers(state.selected, q.answerKeys);
     state.answered = true;
+    state.answerLog[q.id] = {
+      selected: [...state.selected],
+      correct,
+    };
     if (correct) state.session.correct += 1;
     else {
       state.session.wrong += 1;
-      state.session.wrongIds.push(q.id);
+      if (!state.session.wrongIds.includes(q.id)) state.session.wrongIds.push(q.id);
     }
 
-    $$("#optBox .opt").forEach((el) => {
-      const key = el.dataset.key;
-      el.disabled = true;
-      if ((q.answerKeys || []).includes(key)) el.classList.add("correct");
-      if (state.selected.has(key) && !(q.answerKeys || []).includes(key))
-        el.classList.add("wrong");
-    });
-
-    const fb = $("#feedback");
-    fb.classList.remove("hidden", "ok", "bad");
-    fb.classList.add(correct ? "ok" : "bad");
-    fb.innerHTML = correct
-      ? "回答正确"
-      : `回答错误。正确答案：<strong>${escapeHtml(
-          q.answer || (q.answerKeys || []).join(",")
-        )}</strong>`;
-
-    $("#btnSubmit").classList.add("hidden");
-    $("#btnNext").classList.remove("hidden");
-    $("#btnNext").textContent =
-      state.index >= state.queue.length - 1 ? "完成本轮" : "下一题";
+    applyAnsweredUI(q, correct);
+    updateNavButtons();
 
     try {
       const resp = await api("/api/answer", {
@@ -586,13 +619,19 @@
     } catch (e) {
       console.error(e);
     }
-    // keep progress at current index until user goes next
     await saveProgress();
+  }
+
+  async function prevQuestion() {
+    if (state.index <= 0) return;
+    state.index -= 1;
+    await saveProgress();
+    renderQuestion();
   }
 
   async function nextQuestion() {
     if (state.index >= state.queue.length - 1) {
-      await finishSession();
+      if (state.answered) await finishSession();
       return;
     }
     state.index += 1;
@@ -917,6 +956,7 @@
       btn.addEventListener("click", () => startMode(btn.dataset.mode));
     });
     $("#btnSubmit").addEventListener("click", submitAnswer);
+    $("#btnPrev").addEventListener("click", prevQuestion);
     $("#btnNext").addEventListener("click", nextQuestion);
     $("#btnChop").addEventListener("click", chopCurrent);
     $("#btnBackHome").addEventListener("click", goHome);

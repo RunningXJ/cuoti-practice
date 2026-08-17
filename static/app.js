@@ -426,16 +426,27 @@
   function updateNavButtons() {
     const atFirst = state.index <= 0;
     const atLast = state.index >= state.queue.length - 1;
+    const actions = $("#quizActions");
     const prev = $("#btnPrev");
     const next = $("#btnNext");
+    const submit = $("#btnSubmit");
+
+    if (actions) actions.classList.toggle("is-answered", !!state.answered);
+    if (submit) {
+      submit.classList.remove("hidden");
+      submit.disabled = !!state.answered;
+    }
     if (prev) prev.disabled = atFirst;
     if (next) {
       next.disabled = false;
-      if (atLast && state.answered) next.textContent = "完成本轮";
-      else if (atLast && !state.answered) next.textContent = "下一题";
-      else next.textContent = "下一题";
-      // 最后一题且未作答时，下一题不可跳过结束
-      if (atLast && !state.answered) next.disabled = true;
+      next.classList.remove("ghost", "primary");
+      if (state.answered) {
+        next.classList.add("primary");
+        next.textContent = atLast ? "完成本轮" : "下一题";
+      } else {
+        next.classList.add("ghost");
+        next.textContent = "下一题";
+      }
     }
   }
 
@@ -456,7 +467,7 @@
       : `回答错误。正确答案：<strong>${escapeHtml(
           q.answer || (q.answerKeys || []).join(",")
         )}</strong>`;
-    $("#btnSubmit").classList.add("hidden");
+    updateNavButtons();
   }
 
   function renderQuestion() {
@@ -469,7 +480,6 @@
     state.selected = logged ? new Set(logged.selected || []) : new Set();
     state.answered = !!logged;
 
-    $("#btnSubmit").classList.toggle("hidden", state.answered);
     $("#feedback").classList.add("hidden");
     $("#feedback").classList.remove("ok", "bad");
 
@@ -631,7 +641,11 @@
 
   async function nextQuestion() {
     if (state.index >= state.queue.length - 1) {
-      if (state.answered) await finishSession();
+      if (!state.answered) {
+        alert("请先提交本题答案");
+        return;
+      }
+      await finishSession();
       return;
     }
     state.index += 1;

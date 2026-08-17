@@ -46,11 +46,13 @@
         <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
       </div>
       <div id="questionCard" class="q-card"></div>
-      <div class="quiz-actions">
-        <button id="btnPrev" class="ghost">上一题</button>
-        <button id="btnSubmit" class="primary">提交答案</button>
-        <button id="btnNext" class="primary">下一题</button>
-        <button id="btnChop" class="chop">斩题</button>
+      <div class="quiz-actions" id="quizActions">
+        <button id="btnSubmit" class="primary btn-submit">提交答案</button>
+        <div class="quiz-nav">
+          <button id="btnPrev" class="ghost">上一题</button>
+          <button id="btnNext" class="ghost">下一题</button>
+          <button id="btnChop" class="chop">斩题</button>
+        </div>
       </div>
       <div id="feedback" class="feedback hidden"></div>
     </section>
